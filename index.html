@@ -4,9 +4,10 @@
 <!-- Compiled as index.pug => index.html--><!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf8">
     <title>30MFF</title>
     <link href="https://fonts.googleapis.com/css?family=Space+Mono|Work+Sans&amp;display=swap" rel="stylesheet">
-    <link href="./node_modules/aos/dist/aos.css" rel="stylesheet">
+    <link href="./css/aos.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
   </head>
   <body>
@@ -27,7 +28,7 @@
     </div>
     <div id="scrolldown"><img src="./media/caret.png"></div>
     <!-- creates full-page space for viewing video unobstructed-->
-    <div class="fullpage"></div>
+    <div class="fullpage" id="placeholder"></div>
     <!-- synopsis page + "back-to-top" sticky scroll caret-->
     <div class="content" id="stats" style="display: flex">
       <div id="scrollup"><img src="./media/caret.png"></div>
@@ -66,8 +67,8 @@
                 </div>
       </div>
     </div>
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="./node_modules/aos/dist/aos.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/aos.js"></script>
     <script>AOS.init()</script>
     <script src="./js/main.js"></script>
   </body>

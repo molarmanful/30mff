@@ -20,59 +20,58 @@ win.on('load',_=>{
 
   // handles full-page scrolling for cover & video
   win.scroll(e=>{
-    let top = win.scrollTop()
-    let down = top > lastscroll
+    let height = win.height()
+    if(!scroll){
 
-    // scrolling to/from cover
-    // to: fade out + pause vid, make scroll-down caret fixed
-    // from: remove fade + play vid, make scroll-down caret absolute
-    if(!scroll && top && top < innerHeight){
-      scroll = 1
+      let top = win.scrollTop()
+      let down = top > lastscroll
 
-      if(!down){
-        cv.addClass('vidfade')
-        sd.removeClass('stick')
-        covvid.pause()
-      }
-      hb.animate({
-        scrollTop: top > lastscroll ? innerHeight : 0
-      }, 400, _=>{
-        scroll = 0
-        if(down){
-          cv.removeClass('vidfade')
-          sd.addClass('stick')
-          covvid.play()
-        }
-        lastscroll = win.scrollTop()
-      })
-    }
+      // scrolling to/from cover
+      // to: fade out + pause vid, make scroll-down caret fixed
+      // from: remove fade + play vid, make scroll-down caret absolute
+      if(top < height){
+        scroll = 1
 
-    // scrolling to/from video
-    // to: play vid
-    // from: pause vid
-    else if(!scroll && top > innerHeight && top < innerHeight * 2){
-      scroll = 1
-
-      hb.animate({
-        scrollTop: innerHeight * (down + 1)
-      }, 400, _=>{
-        scroll = 0
-        if(down){
+        if(!down){
+          cv.addClass('vidfade')
+          sd.removeClass('stick')
           covvid.pause()
-        } else {
-          covvid.play()
         }
-        lastscroll = win.scrollTop()
-      })
-    }
+        hb.animate({
+          scrollTop: $(down ? '#placeholder' : '#cover').offset().top
+        }, 300, _=>{
+          scroll = 0
+          if(down){
+            cv.removeClass('vidfade')
+            sd.addClass('stick')
+            covvid.play()
+          }
+          lastscroll = win.scrollTop()
+        })
+      }
 
-    // switch b/w fixed/absolute for scroll-up caret
-    else if(top >= innerHeight * 2){
-      su.addClass('stick2')
-    }
+      // scrolling to/from video
+      // to: play vid
+      // from: pause vid
+      else if(top < height * 2){
+        scroll = 1
 
-    else {
-      su.removeClass('stick2')
+        if(!down){
+          su.removeClass('stick2')
+        }
+        hb.animate({
+          scrollTop: $(down ? '#stats' : '#placeholder').offset().top
+        }, 300, _=>{
+          scroll = 0
+          if(down){
+            covvid.pause()
+            su.addClass('stick2')
+          } else {
+            covvid.play()
+          }
+          lastscroll = win.scrollTop()
+        })
+      }
     }
   })
 
@@ -82,16 +81,25 @@ win.on('load',_=>{
     win.scrollTop(top + 1).scroll()
   })
 
-  // scroll-up caret clicked --> reset scroll-down caret
+  // scroll-up caret clicked --> reset both scroll carets
   su.click(_=>{
     scroll = 1
     cv.addClass('vidfade')
-    hb.animate({scrollTop: 0}, 800, _=>{
-      scroll = 0
-      lastscroll = 0
-      sd.removeClass('stick slide').css('bottom','-4em').delay(500).animate({bottom: 0}, 500, _=>{
-        sd.addClass('slide')
-      })
+
+    hb.animate({scrollTop: 0}, {
+      duration: 600,
+      progress: (_, top)=>{
+        if(win.scrollTop() <= win.height() * 2){
+          su.removeClass('stick2')
+        }
+      },
+      complete: _=>{
+        scroll = 0
+        lastscroll = 0
+        sd.removeClass('stick slide').css('bottom','-4em').animate({bottom: 0}, 500, _=>{
+          sd.addClass('slide')
+        })
+      }
     })
   })
 })

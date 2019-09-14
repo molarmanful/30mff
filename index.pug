@@ -5,10 +5,12 @@
 doctype html
 html
   head
+    meta(charset='utf8')
+
     title 30MFF
 
     link(href='https://fonts.googleapis.com/css?family=Space+Mono|Work+Sans&display=swap' rel='stylesheet')
-    link(href='./node_modules/aos/dist/aos.css' rel='stylesheet')
+    link(href='./css/aos.css' rel='stylesheet')
     link(href='./css/style.css' rel='stylesheet')
 
   body
@@ -28,7 +30,7 @@ html
       img(src='./media/caret.png')
 
     // creates full-page space for viewing video unobstructed
-    .fullpage
+    #placeholder.fullpage
 
     // synopsis page + "back-to-top" sticky scroll caret
     #stats.content(style='display: flex')
@@ -58,8 +60,8 @@ html
         +card('Fay', 'AirPods Case Thief', './media/profile-ph.png')
           p(data-aos='fade-up') Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
-    script(src='./node_modules/jquery/dist/jquery.min.js')
-    script(src='./node_modules/aos/dist/aos.js')
+    script(src='./js/jquery.min.js')
+    script(src='./js/aos.js')
     script.
       AOS.init()
     script(src='./js/main.js')
