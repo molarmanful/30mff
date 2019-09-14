@@ -1,0 +1,141 @@
+/* Compiled as style.styl => style.css */
+
+/* GENERAL TAGS */
+
+html,body
+  height 100%
+  width 100%
+  margin 0
+  font-size 120%
+  /* hide scrollbars */
+  scrollbar-width none
+  -ms-overflow-style none
+  &::-webkit-scrollbar
+    width 0px
+    background transparent
+
+html
+  background-color #fff
+
+body
+  font-family 'Work Sans', sans-serif
+  opacity 1
+  transition 1s opacity
+
+h1,h2,h3,h4,h5,h6
+  font-family 'Space Mono', sans-serif
+
+p
+  text-align justify
+  line-height 150%
+
+/* CLASSES */
+
+.fullpage
+  height 100%
+  width 100%
+  display flex
+
+.fade
+  opacity 0
+  transition none
+  overflow hidden
+
+.vidfade
+  opacity .2 !important
+  transition none
+
+.slide
+  top 100%
+  transform translateY(-4em)
+
+.stick
+  position absolute !important
+  top 200% !important
+
+.stick2
+  position fixed !important
+
+// general container for text-based sections
+.content
+  width 70%
+  position relative
+  padding 15%
+  padding-top 3%
+  padding-bottom 0
+  display block
+  background-color #fefefe
+  color #111
+
+// flexbox columns
+.row
+  width 100%
+  display flex
+  .col4
+    width 33.33%
+    padding-left 3%
+    padding-right 3%
+
+/* IDS */
+
+#covvid
+  min-width 100%
+  min-height 123%
+  height auto
+  width auto
+  position fixed
+  left 50%
+  top 50%
+  transform translate3d(-50%,-50%, 0)
+  z-index -1
+  opacity 1
+  transition .5s all
+
+#cover
+  color #000
+  align-items center
+  h2
+    font-family "Work Sans", sans-serif
+
+#scrolldown
+  height 4em
+  width 4em
+  position fixed
+  left 10%
+  display flex
+  justify-content center
+  align-items center
+  background-color #fff
+  cursor pointer
+  img
+    height 50%
+    width auto
+    transition .5s all
+  &:hover img
+    padding-top 20%
+
+#scrollup
+  height 4em
+  width 4em
+  position absolute
+  right 1em
+  top 0
+  display flex
+  justify-content center
+  align-items center
+  background-color #fff
+  cursor pointer
+  z-index 100
+  img
+    height 50%
+    width auto
+    transform rotate(180deg)
+    transition .5s all
+  &:hover img
+    padding-top 20%
+
+#stats
+  p
+    color #555
+    strong
+      color #333

@@ -1,0 +1,65 @@
+// AIRPOD ADDICTION by Ben Pang
+// Distributable under MIT License
+// Compiled as index.pug => index.html
+
+doctype html
+html
+  head
+    title 30MFF
+
+    link(href='https://fonts.googleapis.com/css?family=Space+Mono|Work+Sans&display=swap' rel='stylesheet')
+    link(href='./node_modules/aos/dist/aos.css' rel='stylesheet')
+    link(href='./css/style.css' rel='stylesheet')
+
+  body
+
+    // hide body for fade-in effect after load
+    script.
+      document.body.className += ' fade'
+
+    // cover page with background video, hero box, and scroll caret
+    video#covvid.vidfade(muted loop)
+      source(src='./media/addiction.mp4' type='video/mp4')
+    #cover.fullpage
+      div(style='padding-left:10%')
+        h1(style='font-size: 6vw; margin-bottom: 0') AIRPOD ADDICTION
+        h2(style='font-size: 4vw; margin-top: 0') The Global Epidemic
+    #scrolldown
+      img(src='./media/caret.png')
+
+    // creates full-page space for viewing video unobstructed
+    .fullpage
+
+    // synopsis page + "back-to-top" sticky scroll caret
+    #stats.content(style='display: flex')
+      #scrollup
+        img(src='./media/caret.png')
+      div(style='width: 10em; height: 100%; margin-right: 2em' data-aos='fade-right')
+        h1(style='margin-top: .3em') OVER #[span(style='color: #e11; text-decoration: underline') 35 MILLION] AIRPODS SOLD IN 2018
+      div(data-aos='fade-left')
+        p First released by #[strong Apple™] in December 2016, #[strong AirPods] took the world by storm with its #[strong sleek, wireless form]. At a hefty price tag of #[strong ~$150], #[strong AirPods] quickly became a status symbol for #[strong wealth and class].
+        p But the #[strong AirPods' clean, white exterior] hides its #[strong true, insidious nature]. Frequent users of the headphones have reported experiencing #[strong delusions of grandeur], #[strong declining social skills], and #[strong fear of losing their AirPods case]. A subset of these #[strong AirPods] users exhibit #[strong abnormally extreme] symptoms, leading many to dub them the #[strong Pod Gang].
+        p #[strong(style='color: #e11') AirPod Addiction] follows the tragic story of a Pod Gang member whose #[strong obsession with AirPods] and #[strong inability to socialize with others] eventually leave him #[strong powerless] and #[strong unable to handle reality].
+
+    #cast.content
+      h1(style='text-align: center' data-aos='fade-up') CAST
+      .row
+        mixin card(name, role, url)
+          .col4
+            div(style='text-align: center; line-height: 50%' data-aos='fade-up')
+              h3(data-aos='fade-up')= name
+              h5(style='color: #999' data-aos='fade-up')= role
+              img(src=url style='width: 100%; height: auto' data-aos='fade-up')
+              block
+        +card('Benjamin Pang', 'Pod Gang Member', './media/profile-ph.png')
+          p(data-aos='fade-up') Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        +card('Ganjina Oripova', 'Sociable Person', './media/profile-ph.png')
+          p(data-aos='fade-up') Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        +card('Fay Zhuang', 'AirPods Case Thief', './media/profile-ph.png')
+          p(data-aos='fade-up') Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+    script(src='./node_modules/jquery/dist/jquery.min.js')
+    script(src='./node_modules/aos/dist/aos.js')
+    script.
+      AOS.init()
+    script(src='./js/main.js')

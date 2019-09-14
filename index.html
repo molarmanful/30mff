@@ -1,0 +1,74 @@
+
+<!-- AIRPOD ADDICTION by Ben Pang-->
+<!-- Distributable under MIT License-->
+<!-- Compiled as index.pug => index.html--><!DOCTYPE html>
+<html>
+  <head>
+    <title>30MFF</title>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono|Work+Sans&amp;display=swap" rel="stylesheet">
+    <link href="./node_modules/aos/dist/aos.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- hide body for fade-in effect after load-->
+    <script>
+      document.body.className += ' fade'
+      
+    </script>
+    <!-- cover page with background video, hero box, and scroll caret-->
+    <video class="vidfade" id="covvid" muted loop>
+      <source src="./media/addiction.mp4" type="video/mp4">
+    </video>
+    <div class="fullpage" id="cover">
+      <div style="padding-left:10%">
+        <h1 style="font-size: 6vw; margin-bottom: 0">AIRPOD ADDICTION</h1>
+        <h2 style="font-size: 4vw; margin-top: 0">The Global Epidemic</h2>
+      </div>
+    </div>
+    <div id="scrolldown"><img src="./media/caret.png"></div>
+    <!-- creates full-page space for viewing video unobstructed-->
+    <div class="fullpage"></div>
+    <!-- synopsis page + "back-to-top" sticky scroll caret-->
+    <div class="content" id="stats" style="display: flex">
+      <div id="scrollup"><img src="./media/caret.png"></div>
+      <div style="width: 10em; height: 100%; margin-right: 2em" data-aos="fade-right">
+        <h1 style="margin-top: .3em">OVER <span style="color: #e11; text-decoration: underline">35 MILLION</span> AIRPODS SOLD IN 2018</h1>
+      </div>
+      <div data-aos="fade-left">
+        <p>First released by <strong>Apple™</strong> in December 2016, <strong>AirPods</strong> took the world by storm with its <strong>sleek, wireless form</strong>. At a hefty price tag of <strong>~$150</strong>, <strong>AirPods</strong> quickly became a status symbol for <strong>wealth and class</strong>.</p>
+        <p>But the <strong>AirPods' clean, white exterior</strong> hides its <strong>true, insidious nature</strong>. Frequent users of the headphones have reported experiencing <strong>delusions of grandeur</strong>, <strong>declining social skills</strong>, and <strong>fear of losing their AirPods case</strong>. A subset of these <strong>AirPods</strong> users exhibit <strong>abnormally extreme</strong> symptoms, leading many to dub them the <strong>Pod Gang</strong>.</p>
+        <p><strong style="color: #e11">AirPod Addiction</strong> follows the tragic story of a Pod Gang member whose <strong>obsession with AirPods</strong> and <strong>inability to socialize with others</strong> eventually leave him <strong>powerless</strong> and <strong>unable to handle reality</strong>.</p>
+      </div>
+    </div>
+    <div class="content" id="cast">
+      <h1 style="text-align: center" data-aos="fade-up">CAST</h1>
+      <div class="row">
+                <div class="col4">
+                  <div style="text-align: center; line-height: 50%" data-aos="fade-up">
+                    <h3 data-aos="fade-up">Benjamin Pang</h3>
+                    <h5 style="color: #999" data-aos="fade-up">Pod Gang Member</h5><img src="./media/profile-ph.png" style="width: 100%; height: auto" data-aos="fade-up">
+                    <p data-aos="fade-up">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  </div>
+                </div>
+                <div class="col4">
+                  <div style="text-align: center; line-height: 50%" data-aos="fade-up">
+                    <h3 data-aos="fade-up">Ganjina Oripova</h3>
+                    <h5 style="color: #999" data-aos="fade-up">Sociable Person</h5><img src="./media/profile-ph.png" style="width: 100%; height: auto" data-aos="fade-up">
+                    <p data-aos="fade-up">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  </div>
+                </div>
+                <div class="col4">
+                  <div style="text-align: center; line-height: 50%" data-aos="fade-up">
+                    <h3 data-aos="fade-up">Fay Zhuang</h3>
+                    <h5 style="color: #999" data-aos="fade-up">AirPods Case Thief</h5><img src="./media/profile-ph.png" style="width: 100%; height: auto" data-aos="fade-up">
+                    <p data-aos="fade-up">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  </div>
+                </div>
+      </div>
+    </div>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/aos/dist/aos.js"></script>
+    <script>AOS.init()</script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

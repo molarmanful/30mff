@@ -1,0 +1,23 @@
+{
+  "name": "30mff",
+  "version": "0.0.0",
+  "description": "Website 1 for Comm Lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molarmanful/30mff.git"
+  },
+  "author": "Benjamin Pang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/molarmanful/30mff/issues"
+  },
+  "homepage": "https://github.com/molarmanful/30mff#readme",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "jquery": "^3.4.1"
+  }
+}
