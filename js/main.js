@@ -2,6 +2,8 @@
 let scroll = 0
 // defined so scroll can detect up vs down scrolling
 let lastscroll = 0
+// to account for inertial trackpads (i.e. MacBooks)
+let lethargy = new Lethargy()
 
 // jQuery selectors as vars to cut down on function call overhead
 let win = $(window)
@@ -39,7 +41,7 @@ win.on('load',_=>{
         }
         hb.animate({
           scrollTop: $(down ? '#placeholder' : '#cover').offset().top
-        }, 300, _=>{
+        }, 500, _=>{
           scroll = 0
           if(down){
             cv.removeClass('vidfade')
@@ -61,7 +63,7 @@ win.on('load',_=>{
         }
         hb.animate({
           scrollTop: $(down ? '#stats' : '#placeholder').offset().top
-        }, 300, _=>{
+        }, 500, _=>{
           scroll = 0
           if(down){
             covvid.pause()
@@ -72,6 +74,15 @@ win.on('load',_=>{
           lastscroll = win.scrollTop()
         })
       }
+    }
+  })
+
+  // remove inertia
+  win.on('mousewheel DOMMouseScroll', e=>{
+    let inert = lethargy.check(e)
+    console.log(inert)
+    if(inert){
+      win.scrollTop(win.scrollTop() - inert).scroll()
     }
   })
 

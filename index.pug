@@ -32,35 +32,52 @@ html
     // creates full-page space for viewing video unobstructed
     #placeholder.fullpage
 
-    // synopsis page + "back-to-top" sticky scroll caret
-    #stats.content(style='display: flex')
+    // synopsis + "back-to-top" sticky scroll caret
+    #stats.content
       #scrollup
         img(src='./media/caret.png')
       div(style='width: 10em; height: 100%; margin-right: 2em' data-aos='fade-right')
-        h1(style='margin-top: .3em') OVER #[span(style='color: #e11; text-decoration: underline') 35 MILLION] AIRPODS SOLD IN 2018
+        h1(style='margin-top: .3em') OVER #[span(style='color: #e11; text-decoration: underline') 35 MILLION] AIRPODS SOLD IN 2018.
       div(data-aos='fade-left')
         p First released by #[strong Apple™] in December 2016, #[strong AirPods] took the world by storm with its #[strong sleek, wireless form]. At a hefty price tag of #[strong ~$150], #[strong AirPods] quickly became a status symbol for #[strong wealth and class].
         p But the #[strong AirPods' clean, white exterior] hides its #[strong true, insidious nature]. Frequent users of the headphones have reported experiencing #[strong delusions of grandeur], #[strong declining social skills], and #[strong fear of losing their AirPods case]. A subset of these #[strong AirPods] users exhibit #[strong abnormally extreme] symptoms, leading many to dub them the #[strong Pod Gang].
         p #[strong(style='color: #e11') AirPod Addiction] follows the tragic story of a Pod Gang member whose #[strong obsession with AirPods] and #[strong inability to socialize with others] eventually leave him #[strong powerless] and #[strong unable to handle reality].
 
+    // info about group members
     #cast.content
       h1(style='text-align: center' data-aos='fade-up') CAST
       .row
         mixin card(name, role, url)
           .col4
-            div(style='text-align: center; line-height: 50%' data-aos='fade-up')
-              h3(data-aos='fade-up')= name
+            div(style='text-align: center' data-aos='fade-up')
+              h3(style='line-height: 50%' data-aos='fade-up')= name
               h5(style='color: #999' data-aos='fade-up')= role
-              img(src=url style='width: 100%; height: auto' data-aos='fade-up')
-              block
-        +card('Ben', 'Pod Gang Member', './media/profile-ph.png')
-          p(data-aos='fade-up') Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        +card('Ganjina', 'Sociable Person', './media/profile-ph.png')
-          p(data-aos='fade-up') Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        +card('Fay', 'AirPods Case Thief', './media/profile-ph.png')
-          p(data-aos='fade-up') Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              .circle(style='background-image: url('+url+');margin-top: 1em; margin-bottom: 1em' data-aos='fade-up')
+        +card('Ben', 'Pod Gang Member', './media/ben.jpg')
+        +card('Ganjina', 'Sociable Person', './media/ganjina.jpg')
+        +card('Fay', 'AirPods Case Thief', './media/fay.jpg')
+      .row
+        .col4
+          p(data-aos='fade-up') Ben is a sophomore from California majoring in interactive media. In his free time, he likes longboarding, sketching, solving Rubik's Cubes, and playing the sax.
+        .col4
+          p(data-aos='fade-up') Ganjina is a junior from Tajikistan majoring in interactive media. In her free time, she likes learning languages, dancing, and painting.
+        .col4
+          p(data-aos='fade-up') Fay is a senior from China. It is unknown what her hobbies are, but it is likely that she has hobbies of some sort.
+
+    // contact info
+    #contact.fullpage
+      div(style='height: 100%; width: 50%; background-color: rgba(0,0,0,.5)')
+      div(style='height: 100%; width: 40%; background-color: #fefefe; display: flex; align-items: center; padding-left: 5%; padding-right: 5%')
+        div
+          h1(style='font-size: 6vw' data-aos='fade-up') DON'T BE THIS GUY.
+          div(data-aos='fade-up')
+            p(style='margin-bottom: 0'): strong AirPods Intervention Hotline
+            p(style='margin-top: 0; font-family: Space Mono') +1(800)555-PODS
+            p(style='margin-bottom: 0'): strong Email
+            p(style='margin-top: 0; font-family: Space Mono; text-decoration: underline') info@nopods.org
 
     script(src='./js/jquery.min.js')
+    script(src='./js/lethargy.min.js')
     script(src='./js/aos.js')
     script.
       AOS.init()

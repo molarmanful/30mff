@@ -18,6 +18,7 @@
   "homepage": "https://github.com/molarmanful/30mff#readme",
   "dependencies": {
     "aos": "^2.3.4",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "lethargy": "^1.0.7"
   }
 }

@@ -15,15 +15,15 @@ html,body
     background transparent
 
 html
-  background-color #fff
+  background-color #000
 
 body
-  font-family 'Work Sans', sans-serif
+  font-family 'Work Sans'
   opacity 1
   transition 1s opacity
 
 h1,h2,h3,h4,h5,h6
-  font-family 'Space Mono', sans-serif
+  font-family 'Space Mono'
 
 p
   text-align justify
@@ -42,7 +42,7 @@ p
   overflow hidden
 
 .vidfade
-  opacity .2 !important
+  opacity .3 !important
   transition none
 
 .slide
@@ -56,6 +56,15 @@ p
 .stick2
   position fixed !important
 
+.circle
+  width 50%
+  padding-bottom 50%
+  margin-left auto
+  margin-right auto
+  border solid 10px #999
+  border-radius 50%
+  background-size cover
+
 // general container for text-based sections
 .content
   width 70%
@@ -67,7 +76,7 @@ p
   background-color #fefefe
   color #111
 
-// flexbox columns
+// flexbox columns (12-column grid system)
 .row
   width 100%
   display flex
@@ -92,10 +101,10 @@ p
   transition .5s all
 
 #cover
-  color #000
+  color #fff
   align-items center
   h2
-    font-family "Work Sans", sans-serif
+    font-family "Work Sans"
 
 #scrolldown
   height 4em
@@ -135,7 +144,16 @@ p
     padding-top 20%
 
 #stats
+  display flex
   p
     color #555
     strong
       color #333
+
+#cast
+  padding-bottom 5%
+
+#contact
+  background-image url(../media/panic.png)
+  background-size cover
+  background-attachment fixed
